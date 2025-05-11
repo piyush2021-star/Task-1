@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Document metadata section - defines character encoding, viewport settings, and page title -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Webpage</title>
+    <style>
+        /* CSS Styling section - controls the visual appearance of the webpage */
+        
+        /* Base styling for the entire page */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Sets the font family */
+            line-height: 1.6; /* Controls line spacing */
+            margin: 0; /* Removes default margin */
+            padding: 0; /* Removes default padding */
+            background-color: #f8f9fa; /* Sets a light gray background color */
+            color: #333; /* Sets the default text color */
+        }
+        
+        /* Header styling - appears at the top of the page */
+        header {
+            background-color: #4b6584; /* Dark blue background */
+            color: white; /* White text */
+            text-align: center; /* Centers the text */
+            padding: 2rem 0; /* Adds space above and below content */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adds subtle shadow effect */
+        }
+        
+        /* Main heading styling */
+        h1 {
+            margin: 0; /* Removes default margin */
+            font-size: 2.5rem; /* Sets font size */
+        }
+        
+        /* Container to center and constrain the main content */
+        .container {
+            max-width: 800px; /* Limits width for better readability */
+            margin: 2rem auto; /* Centers horizontally with space above/below */
+            padding: 0 1rem; /* Adds horizontal padding */
+        }
+        
+        /* Image styling */
+        img {
+            max-width: 100%; /* Makes images responsive */
+            height: auto; /* Maintains aspect ratio */
+            border-radius: 8px; /* Rounds corners */
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2); /* Adds shadow for depth */
+            display: block; /* Makes image a block element */
+            margin: 2rem auto; /* Centers image with space above/below */
+        }
+        
+        /* Styling for each content section */
+        .content-section {
+            background-color: white; /* White background */
+            padding: 2rem; /* Adds internal spacing */
+            border-radius: 8px; /* Rounds corners */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adds subtle shadow */
+            margin-bottom: 2rem; /* Adds space between sections */
+        }
+        
+        /* Subheading styling */
+        h2 {
+            color: #4b6584; /* Dark blue color matching header */
+            border-bottom: 2px solid #f0f0f0; /* Adds separator line */
+            padding-bottom: 0.5rem; /* Adds space below text */
+        }
+        
+        /* Link styling */
+        a {
+            color: #2e86de; /* Blue link color */
+            text-decoration: none; /* Removes underline */
+            font-weight: 600; /* Makes text semibold */
+        }
+        
+        /* Link hover effect */
+        a:hover {
+            text-decoration: underline; /* Adds underline on hover */
+        }
+        
+        /* Button styling */
+        .btn {
+            background-color: #2e86de; /* Blue background */
+            color: white; /* White text */
+            border: none; /* Removes border */
+            padding: 10px 20px; /* Adds internal spacing */
+            border-radius: 4px; /* Rounds corners */
+            font-size: 1rem; /* Sets font size */
+            cursor: pointer; /* Changes cursor to hand icon */
+            transition: background-color 0.3s; /* Smooth color transition */
+        }
+        
+        /* Button hover effect */
+        .btn:hover {
+            background-color: #1c67b3; /* Darker blue on hover */
+        }
+        
+        /* Footer styling - appears at bottom of page */
+        footer {
+            background-color: #4b6584; /* Dark blue background */
+            color: white; /* White text */
+            text-align: center; /* Centers the text */
+            padding: 1rem 0; /* Adds space above and below content */
+            margin-top: 2rem; /* Adds space above footer */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header section - contains the page title and tagline -->
+    <header>
+        <h1>Welcome to My First Webpage</h1>
+        <p>Learning HTML, CSS, and JavaScript</p>
+    </header>
+    
+    <!-- Main content container -->
+    <div class="container">
+        <!-- About section - introduces the webpage purpose -->
+        <section class="content-section">
+            <h2>About This Project</h2>
+            <p>This webpage demonstrates basic web development concepts including:</p>
+            <ul>
+                <li>HTML for structure</li>
+                <li>CSS for styling</li>
+                <li>JavaScript for interactivity</li>
+            </ul>
+            <p>As you explore this page, you'll see how these technologies work together to create a modern web experience.</p>
+        </section>
+        
+        <!-- Image section - displays an example image -->
+        <section class="content-section">
+            <h2>An Example Image</h2>
+            <!-- Note: Using a local file path that won't work online - should use relative path or URL -->
+            <img src="C:\Users\Piyush Lonkar\OneDrive\Desktop\img.jpeg" alt="Placeholder Image">
+            <p></p>
+        </section>
+        
+        <!-- Resources section - provides links to additional learning materials -->
+        <section class="content-section">
+            <h2>Helpful Resources</h2>
+            <p>Here are some resources to continue learning web development:</p>
+            <ul>
+                <li><a href="https://apexplanet.in/internship/registration" target="_blank">Web development</a></li>
+                <li><a href="https://apexplanet.in/internship/registration" target="_blank">Web Developer</a></li>
+                <li><a href="https://apexplanet.in/internship/registration" target="_blank">App Development</a></li>
+            </ul>
+        </section>
+        
+        <!-- Interactive section - demonstrates JavaScript functionality -->
+        <section class="content-section">
+            <h2>JavaScript Interaction Demo</h2>
+            <p>Click the button below to trigger a JavaScript alert:</p>
+            <button id="alertButton" class="btn">Click Me!</button>
+            
+            <!-- Hidden message box that appears when button is clicked -->
+            <div id="messageBox" style="margin-top: 1rem; display: none; padding: 1rem; background-color: #e3f2fd; border-radius: 4px;">
+                Button was clicked! This message was displayed using JavaScript.
+            </div>
+        </section>
+    </div>
+  
+    <!-- JavaScript section - adds interactivity to the page -->
+    <script>
+        // Button click event handler - executes when the button is clicked
+        document.getElementById('alertButton').addEventListener('click', function() {
+            // Shows a popup alert message
+            alert('Hello! This alert was triggered by JavaScript.');
+            
+            // Displays the hidden message box by changing its display property
+            const messageBox = document.getElementById('messageBox');
+            messageBox.style.display = 'block';
+            
+            // Changes the button text to indicate it was clicked
+            this.textContent = 'Clicked!';
+            
+            // Resets the button and hides the message after 3 seconds (3000 milliseconds)
+            setTimeout(function() {
+                document.getElementById('alertButton').textContent = 'Click Me!';
+                messageBox.style.display = 'none';
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
